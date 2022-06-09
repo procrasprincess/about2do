@@ -17,7 +17,7 @@ const config = {
 				hmr:{
 					//update port n host so remote and local both works
 					clientPort: process.env.HMR_HOST ? 443: 3000,
-					host: process.env.HMR_HOST ? process.env.HMR_HOST.substring("https://".length): "localhost"
+					host: process.env.HMR_HOST ? process.env.HMR_HOST.substring("https://".length) : "localhost"
 				}
 			}
 		}
