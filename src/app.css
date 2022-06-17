@@ -1,0 +1,42 @@
+/* global variables */
+:root{
+    font-family:fantasy;
+    --primary-color: rgba(250, 172, 227, 0.95);
+    --second-color: #faace3b9;
+    --third-color: #faace381;
+}
+
+/* set background color to be primary color */
+body{
+    background-color: var(--primary-color);
+    background: linear-gradient(
+        180deg,
+        var(--primary-color),
+        var(--second-color),
+        var(--third-color)
+    );
+    /* fix the height so colors blend in */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* style h1 */
+h1{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+@media(min-width: 720px) {
+    hi{
+        font-size: 2.4rem;
+    }
+} 
+
+footer{
+    text-align: center;
+    padding-top: 9rem;
+}
+
+
+
