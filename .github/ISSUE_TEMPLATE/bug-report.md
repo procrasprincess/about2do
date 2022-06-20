@@ -1,3 +1,12 @@
+---
+name: bug report
+about: bug report
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ### Bug Report Example
 
 ### 500 Server Error (TypeError) if ContentType is not set (example)
