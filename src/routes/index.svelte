@@ -1,8 +1,26 @@
+<!-- module only executes once: server side rendering -->
+<script context="module" lang="ts">
+    import type { Load } from "@sveltejs/kit";
+
+    // svelte fetch
+    export const load: Load = async ({ fetch }) => {
+        const res = await fetch("/todos.json");
+
+        if (res.ok) {
+            const todos = await res.json();
+        }
+        return{
+        }
+
+    };
+</script>
+
+
 <script>
     // import todo-item svelte component
-    // can replace ../ with $
-    import TodoItem from "../lib/todo-item.svelte";
-    // varaible to store page title
+    import TodoItem from "../lib/todo-item.svelte"; // can replace ../ with $
+  
+    // to store page title
     const pagetitle = "About To-Do";
 </script>
 
@@ -59,7 +77,7 @@
     <h1>{pagetitle}</h1>
     <!-- Visit https://kit.svelte.dev to read the documentation -->
 
-    <form action="" method="" class="new">
+    <form action="/api/todos.json" method="post" class="new">
         <input type="text" name="text" aria-label="Add a To-Do" placeholder="+ add a new to-do ^_^" class="hidinput"/>
     </form>
 
