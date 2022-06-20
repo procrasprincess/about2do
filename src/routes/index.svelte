@@ -8,18 +8,27 @@
 
         if (res.ok) {
             const todos = await res.json();
+            return{
+                props: { todos }
+            }
         }
+        
+        //get error message if there is any
+        const{ message } = await res.json();
         return{
+            error: new Error(message)
         }
-
     };
 </script>
 
 
-<script>
+<script lang="ts">
     // import todo-item svelte component
     import TodoItem from "../lib/todo-item.svelte"; // can replace ../ with $
-  
+    
+    // passing props
+    export let todos: Todo[];
+
     // to store page title
     const pagetitle = "About To-Do";
 </script>
@@ -81,10 +90,12 @@
         <input type="text" name="text" aria-label="Add a To-Do" placeholder="+ add a new to-do ^_^" class="hidinput"/>
     </form>
 
-    <!-- render todo-item -->
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
+    <!-- render todo-items: using loop -->
+    {#each todos as todo} 
+        <TodoItem>
+            {todo}
+        </TodoItem>
+    {/each}
 
     <br>
     
