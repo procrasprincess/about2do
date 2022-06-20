@@ -102,7 +102,7 @@
     </form>
 
     <form action="" method="" class="text">
-        <input type="text value="{todo}"/>
+        <input type="text" value="{todo}"/>
         <button aria-label="Save To-Do" class="save"></button>
     </form>
 
